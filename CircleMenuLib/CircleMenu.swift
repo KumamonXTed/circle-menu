@@ -351,9 +351,9 @@ open class CircleMenu: UIButton {
 
     @objc func buttonHandler(_ sender: CircleMenuButton) {
         guard let platform = self.platform else { return }
-
+        sender.isEnabled = false
         delegate?.circleMenu?(self, buttonWillSelected: sender, atIndex: sender.tag)
-        
+
         let strokeWidth: CGFloat
         if let radius = self.subButtonsRadius {
             strokeWidth = radius * 2
@@ -384,6 +384,7 @@ open class CircleMenu: UIButton {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + duration, execute: {
             self.delegate?.circleMenu?(self, buttonDidSelected: sender, atIndex: sender.tag)
+            sender.isEnabled = true
         })
 }
 
