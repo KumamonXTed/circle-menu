@@ -113,7 +113,7 @@ open class CircleMenu: UIButton {
     /// The object that acts as the delegate of the circle menu.
     @IBOutlet open weak var delegate: AnyObject? // CircleMenuDelegate?
 
-    var buttons: [UIButton]?
+    public var buttons: [UIButton]?
     weak var platform: UIView?
 
     public var customNormalIconView: UIImageView?
@@ -180,7 +180,7 @@ open class CircleMenu: UIButton {
      - parameter duration:  The duration, in seconds, of the animation.
      - parameter hideDelay: The time to delay, in seconds.
      */
-    open func hideButtons(_ duration: Double, hideDelay: Double = 0) {
+    open func hideButtons(_ duration: Double = 0.2, hideDelay: Double = 0) {
         if buttons == nil {
             return
         }
