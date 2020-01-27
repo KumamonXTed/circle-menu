@@ -132,19 +132,19 @@ open class CircleMenu: UIButton {
      - returns: A newly created circle menu.
      */
     public init(frame: CGRect,
-                normalIcon: String?,
-                selectedIcon: String?,
+                normalIcon: UIImage?,
+                selectedIcon: UIImage?,
                 buttonsCount: Int = 3,
                 duration: Double = 2,
                 distance: Float = 100) {
         super.init(frame: frame)
 
         if let icon = normalIcon {
-            setImage(UIImage(named: icon), for: .normal)
+            setImage(icon, for: .normal)
         }
 
         if let icon = selectedIcon {
-            setImage(UIImage(named: icon), for: .selected)
+            setImage(icon, for: .selected)
         }
 
         self.buttonsCount = buttonsCount
